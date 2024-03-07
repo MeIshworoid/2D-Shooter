@@ -7,16 +7,13 @@ using UnityEngine.UI;
 public class Fade : MonoBehaviour
 {
     [SerializeField] private float _fadeTime = 1.5f;
-    [SerializeField] private GameObject _playerPrefab;
-    [SerializeField] private Transform _respawnPoint;
+    [SerializeField] private RespawnManager _respawnManager;
 
     private Image _image;
-    private CinemachineVirtualCamera _virtualCamera;
 
     private void Awake()
     {
         _image = GetComponent<Image>();
-        _virtualCamera = FindFirstObjectByType<CinemachineVirtualCamera>();
     }
 
     public void FadeInAndOut()
@@ -27,7 +24,7 @@ public class Fade : MonoBehaviour
     private IEnumerator FadeIn()
     {
         yield return StartCoroutine(FadeRoutine(1f));
-        Respawn();
+        _respawnManager.RespawnPlayer();
         StartCoroutine(FadeRoutine(0f));
     }
 
@@ -47,11 +44,5 @@ public class Fade : MonoBehaviour
         }
 
         _image.color = new Color(_image.color.r, _image.color.g, _image.color.b, targetAlpha);
-    }
-
-    private void Respawn()
-    {
-        Transform player = Instantiate(_playerPrefab, _respawnPoint.position, Quaternion.identity).transform;
-        _virtualCamera.Follow = player;
     }
 }

@@ -45,12 +45,15 @@ TagManager:
   - name: No Light
     uniqueID: 2679027219
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Between
     uniqueID: 1801666617
     locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: VFX
     uniqueID: 182527879
+    locked: 0
+  - name: Between
+    uniqueID: 2125037397
     locked: 0

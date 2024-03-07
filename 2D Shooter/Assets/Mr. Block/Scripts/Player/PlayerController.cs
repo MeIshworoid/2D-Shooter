@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _jetpackStrength = 11f;
     [SerializeField] private float _maxFallSpeedVelocity = -20f;
     [SerializeField] private Animator _animator;
+   
 
     private bool _wasGroundedLastFrame;
     private float _timeInAir, _coyoteTimer;
@@ -261,4 +262,6 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
+
+
 }

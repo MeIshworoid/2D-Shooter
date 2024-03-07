@@ -179,6 +179,11 @@ public class AudioManager : MonoBehaviour
         PlayRandomSound(_soundsCollectionSo.Jetpack);
     }
 
+    public void Flamethrower_OnFlamethrower()
+    {
+        PlayRandomSound(_soundsCollectionSo.Flamethrower);
+    }
+
     public void Grenade_OnBeep()
     {
         PlayRandomSound(_soundsCollectionSo.GrenadeBeep);
